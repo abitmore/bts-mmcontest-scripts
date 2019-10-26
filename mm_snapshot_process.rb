@@ -172,18 +172,23 @@ def process_snapshots( snapshot_path, score_path, date )
   puts "Groups data"
   puts daily_coin_group_data
 
+  total_reward = 0
   daily_trader_scores.each { |coin,sd|
     sd[:sells].each{ |trader,score|
       daily_trader_rewards[coin][:sells][trader] = ( score * $daily_rewards[coin][:sells] / blocks ).to_i
+      total_reward += daily_trader_rewards[coin][:sells][trader]
     }
     sd[:buys].each{ |trader,score|
       daily_trader_rewards[coin][:buys][trader] = ( score * $daily_rewards[coin][:buys] / blocks ).to_i
+      total_reward += daily_trader_rewards[coin][:buys][trader]
     }
   }
   puts
   puts "============================================="
   puts "Rewards"
   puts daily_trader_rewards
+  puts
+  puts "Total %0.5f BTS" % (total_reward.to_f/100000)
   puts
 
   daily_trader_rewards.each{ |coin,d|
