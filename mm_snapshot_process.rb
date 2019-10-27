@@ -90,19 +90,21 @@ def process_snapshots( snapshot_path, score_path, date )
     orders.each{ |asset,book|
       cg = coin_group_data[$assets[asset][:coin]]
       book[:sells].each { |order|
+        order_weight = BigDecimal.new(order[:weight],40)
         if not cg[:sells].has_key? order[:group]
-          cg[:sells][order[:group]] = { :bts_amount => order[:bts_amount], :weight => order[:weight] }
+          cg[:sells][order[:group]] = { :bts_amount => order[:bts_amount], :weight => order_weight }
         else
           cg[:sells][order[:group]][:bts_amount] += order[:bts_amount] 
-          cg[:sells][order[:group]][:weight] += order[:weight] 
+          cg[:sells][order[:group]][:weight] += order_weight
         end
       }
       book[:buys].each { |order|
+        order_weight = BigDecimal.new(order[:weight],40)
         if not cg[:buys].has_key? order[:group]
-          cg[:buys][order[:group]] = { :bts_amount => order[:bts_amount], :weight => order[:weight] }
+          cg[:buys][order[:group]] = { :bts_amount => order[:bts_amount], :weight => order_weight }
         else
           cg[:buys][order[:group]][:bts_amount] += order[:bts_amount] 
-          cg[:buys][order[:group]][:weight] += order[:weight] 
+          cg[:buys][order[:group]][:weight] += order_weight
         end
       }
     }
