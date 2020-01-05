@@ -4,8 +4,8 @@ $snapshot_root_path = "/home/www/html/snapshots"
 
 $proposer = "abit"
 
-$start_date = Date.parse("2020-01-03")
-$end_date = Date.parse("2020-01-03")
+$start_date = Date.parse("2020-01-04")
+$end_date = Date.parse("2020-01-04")
 
 $min_order_bts_amount = 100*100000 # 100 BTS
 $group_bts_amount_cap = 1000*1000*100000 # 1M BTS
@@ -36,6 +36,7 @@ $assets = {
   "1.3.4199" => { :coin => :ETH, :name => "SPARKDEX.ETH"},
   "1.3.4760" => { :coin => :ETH, :name => "XBTSX.ETH"},
 #
+  "1.3.2635" => { :coin => :EOS, :name => "GDEX.EOS"},
   "1.3.4106" => { :coin => :EOS, :name => "RUDEX.EOS"},
 }
 
