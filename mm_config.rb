@@ -12,63 +12,46 @@ $group_bts_amount_cap = 1000*1000*100000 # 1M BTS
 
 $coins = [ :BTC, :USDT, :ETH, :EOS ]
 $assets = {
-#  testnet
-=begin
-  "1.3.1515" => { :coin => :BTC,  :name => "CONTEST.BTC" },
-  "1.3.1516" => { :coin => :USDT, :name => "CONTEST.USD1" },
-  "1.3.1517" => { :coin => :USDT, :name => "CONTEST.USD2" },
-=end
-#  mainnet
-#  "1.3.861"  => { :coin => :BTC, :name => "OPEN.BTC"},
-#  "1.3.1570" => { :coin => :BTC, :name => "BRIDGE.BTC"},
-  "1.3.2241" => { :coin => :BTC, :name => "GDEX.BTC"},
-  "1.3.3926" => { :coin => :BTC, :name => "RUDEX.BTC"},
-  "1.3.4157" => { :coin => :BTC, :name => "XBTSX.BTC"},
-  "1.3.4198" => { :coin => :BTC, :name => "SPARKDEX.BTC"},
-#  "1.3.1042" => { :coin => :USDT, :name => "OPEN.USDT"},
-#  "1.3.5144" => { :coin => :USDT, :name => "BRIDGE.USDT"},
-  "1.3.5286" => { :coin => :USDT, :name => "GDEX.USDT"},
-  "1.3.5542" => { :coin => :USDT, :name => "RUDEX.USDT"},
-  "1.3.5589" => { :coin => :USDT, :name => "XBTSX.USDT"},
+  "1.3.2241" => { :coin => :BTC, :name => "GDEX.BTC", :precision => 8 },
+  "1.3.3926" => { :coin => :BTC, :name => "RUDEX.BTC", :precision => 8 },
+  "1.3.4157" => { :coin => :BTC, :name => "XBTSX.BTC", :precision => 8 },
+  "1.3.4198" => { :coin => :BTC, :name => "SPARKDEX.BTC", :precision => 7 },
 #
-  "1.3.2598" => { :coin => :ETH, :name => "GDEX.ETH"},
-  "1.3.3715" => { :coin => :ETH, :name => "RUDEX.ETH"},
-  "1.3.4199" => { :coin => :ETH, :name => "SPARKDEX.ETH"},
-  "1.3.4760" => { :coin => :ETH, :name => "XBTSX.ETH"},
+  "1.3.5286" => { :coin => :USDT, :name => "GDEX.USDT", :precision => 7 },
+  "1.3.5542" => { :coin => :USDT, :name => "RUDEX.USDT", :precision => 6 },
+  "1.3.5589" => { :coin => :USDT, :name => "XBTSX.USDT", :precision => 6 },
 #
-  "1.3.2635" => { :coin => :EOS, :name => "GDEX.EOS"},
-  "1.3.4106" => { :coin => :EOS, :name => "RUDEX.EOS"},
+  "1.3.2598" => { :coin => :ETH, :name => "GDEX.ETH", :precision => 6 },
+  "1.3.3715" => { :coin => :ETH, :name => "RUDEX.ETH", :precision => 7 },
+  "1.3.4199" => { :coin => :ETH, :name => "SPARKDEX.ETH", :precision => 6 },
+  "1.3.4760" => { :coin => :ETH, :name => "XBTSX.ETH", :precision => 7 },
+#
+  "1.3.2635" => { :coin => :EOS, :name => "GDEX.EOS", :precision => 6 },
+  "1.3.4106" => { :coin => :EOS, :name => "RUDEX.EOS", :precision => 4 },
 }
 
-#  "id": "1.3.861", "symbol": "OPEN.BTC",
-#  "id": "1.3.1570", "symbol": "BRIDGE.BTC", --gateway closing, removed
-#  "id": "1.3.2241", "symbol": "GDEX.BTC",
-#  "id": "1.3.3926", "symbol": "RUDEX.BTC",
-#  "id": "1.3.4157", "symbol": "XBTSX.BTC",
-#  "id": "1.3.4198", "symbol": "SPARKDEX.BTC",
-#
-#  "id": "1.3.1042", "symbol": "OPEN.USDT",
-#  "id": "1.3.5144", "symbol": "BRIDGE.USDT", --gateway closing, removed
-#  "id": "1.3.5286", "symbol": "GDEX.USDT",
-#  "id": "1.3.5542", "symbol": "RUDEX.USDT",
-#  "id": "1.3.5589", "symbol": "XBTSX.USDT",
-#
-#  "id": "1.3.850", "symbol": "OPEN.ETH",
-#  "id": "1.3.2598", "symbol": "GDEX.ETH",
-#  "id": "1.3.3715", "symbol": "RUDEX.ETH",
-#  "id": "1.3.4199", "symbol": "SPARKDEX.ETH",
-#  "id": "1.3.4760", "symbol": "XBTSX.ETH",
-#
-#  "id": "1.3.1999", "symbol": "OPEN.EOS",
-#  "id": "1.3.2635", "symbol": "GDEX.EOS",
-#  "id": "1.3.4106", "symbol": "RUDEX.EOS",
+$bitassets = {
+  "1.3.113"  => { :name => "CNY",   :precision => 4 },
+  "1.3.121"  => { :name => "USD",   :precision => 4 },
+  "1.3.120"  => { :name => "EUR",   :precision => 4 },
+  "1.3.1325" => { :name => "RUBLE", :precision => 5 },
+}
 
-
-$daily_rewards = {
-  :BTC => { :sells => 4500*100000, :buys => 10500*100000 },
+$bts_market_daily_rewards = {
+  :BTC  => { :sells => 4500*100000, :buys => 10500*100000 },
   :USDT => { :sells => 4500*100000, :buys => 10500*100000 },
-  :ETH => { :sells => 4500*100000, :buys => 10500*100000 },
-  :EOS => { :sells => 4500*100000, :buys => 10500*100000 },
+  :ETH  => { :sells => 4500*100000, :buys => 10500*100000 },
+  :EOS  => { :sells => 4500*100000, :buys => 10500*100000 },
+}
+
+$base_precision = 8
+$base_sat = 10**$base_precision
+
+$bitasset_market_reward_params = {
+  :BTC  => { :sells =>    0*100000, :buys =>    0*100000, :min_order_size => $base_sat     / 1000, :target_depth_per_group => $base_sat * 4 },
+  :ETH  => { :sells =>    0*100000, :buys =>    0*100000, :min_order_size => $base_sat * 5 / 100,  :target_depth_per_group => $base_sat * 200 },
+  :EOS  => { :sells =>    0*100000, :buys =>    0*100000, :min_order_size => $base_sat * 2,        :target_depth_per_group => $base_sat * 10000 },
+  :USDT => { :sells =>    0*100000, :buys =>    0*100000, :min_order_size => $base_sat * 10,       :target_depth_per_group => $base_sat * 50000 },
 }
 
 $group_reward_percent = [ 0, Rational(53,100), Rational(25,100), Rational(12,100), Rational(6,100), Rational(3,100), Rational(1,100),  0 ]
