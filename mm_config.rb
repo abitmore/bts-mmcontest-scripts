@@ -2,6 +2,8 @@
 
 $snapshot_root_path = "/home/www/html/snapshots"
 
+$proposer = "abit"
+
 $start_date = Date.parse("2020-01-03")
 $end_date = Date.parse("2020-01-03")
 

@@ -224,7 +224,7 @@ def process_snapshots( snapshot_path, score_path, date )
     }
   }
   puts 'set_fees_on_builder_transaction 0 1.3.0'
-  puts 'propose_builder_transaction2 0 abit "2019-10-31T23:55:00" 0 true'
+  puts 'propose_builder_transaction2 0 %s "%sT23:55:00" 0 true' % [ $proposer, Date.today.next_day(10).to_s ]
   puts
 end
 
