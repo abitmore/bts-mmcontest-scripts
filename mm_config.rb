@@ -4,8 +4,8 @@ $snapshot_root_path = "/home/www/html/snapshots"
 
 $proposer = "abit"
 
-$start_date = Date.parse("2020-01-12")
-$end_date = Date.parse("2020-01-12")
+$start_date = Date.parse("2020-01-27")
+$end_date = Date.parse("2020-01-27")
 
 $min_order_bts_amount = 100*100000 # 100 BTS
 $group_bts_amount_cap = 1000*1000*100000 # 1M BTS
@@ -38,20 +38,20 @@ $bitassets = {
 }
 
 $bts_market_daily_rewards = {
-  :BTC  => { :sells => 3000*100000, :buys => 7000*100000 },
-  :USDT => { :sells => 3000*100000, :buys => 7000*100000 },
-  :ETH  => { :sells => 3000*100000, :buys => 7000*100000 },
-  :EOS  => { :sells => 3000*100000, :buys => 7000*100000 },
+  :BTC  => { :sells => 2250*100000, :buys => 5250*100000 },
+  :USDT => { :sells => 2250*100000, :buys => 5250*100000 },
+  :ETH  => { :sells => 2250*100000, :buys => 5250*100000 },
+  :EOS  => { :sells => 2250*100000, :buys => 5250*100000 },
 }
 
 $base_precision = 8
 $base_sat = 10**$base_precision
 
 $bitasset_market_reward_params = {
-  :BTC  => { :sells => 2500*100000, :buys => 2500*100000, :min_order_size => $base_sat     / 1000, :target_depth_per_group => $base_sat * 4 },
-  :ETH  => { :sells => 2500*100000, :buys => 2500*100000, :min_order_size => $base_sat * 5 / 100,  :target_depth_per_group => $base_sat * 200 },
-  :EOS  => { :sells => 2500*100000, :buys => 2500*100000, :min_order_size => $base_sat * 2,        :target_depth_per_group => $base_sat * 10000 },
-  :USDT => { :sells => 2500*100000, :buys => 2500*100000, :min_order_size => $base_sat * 10,       :target_depth_per_group => $base_sat * 50000 },
+  :BTC  => { :sells => 3750*100000, :buys => 3750*100000, :min_order_size => $base_sat     / 1000, :target_depth_per_group => $base_sat * 2 },
+  :ETH  => { :sells => 3750*100000, :buys => 3750*100000, :min_order_size => $base_sat * 5 / 100,  :target_depth_per_group => $base_sat * 100 },
+  :EOS  => { :sells => 3750*100000, :buys => 3750*100000, :min_order_size => $base_sat * 2,        :target_depth_per_group => $base_sat * 5000 },
+  :USDT => { :sells => 3750*100000, :buys => 3750*100000, :min_order_size => $base_sat * 10,       :target_depth_per_group => $base_sat * 25000 },
 }
 
 $group_reward_percent = [ 0, Rational(53,100), Rational(25,100), Rational(12,100), Rational(6,100), Rational(3,100), Rational(1,100),  0 ]
